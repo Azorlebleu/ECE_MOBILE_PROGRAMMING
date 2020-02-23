@@ -3,7 +3,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Button;
 import android.view.ViewGroup;
-import android.os.AsyncTask;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.ServerSocket;
 
 import android.widget.TextView;
 
@@ -18,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
     public String a = "";
     public String b = "";
-    public int res;
     public char operator = Character.MIN_VALUE; //to emulate an empty character
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,48 +31,56 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public class EqualButton extends AsyncTask<Void, Float, Float> {
-        @Override
-        public Float doInBackground(Void... voids) {
-            //Do the last operation
-            System.out.println("haha1");
-            if (b != "") {
-                int A = Integer.parseInt(a);
-                int B = Integer.parseInt(b);
-                switch (operator) {
-                    case '*':
-                        res = A * B;
-                        break;
-                    case '/':
-                        res = A / B;
-                        break;
-                    case '+':
-                        res = A + B;
-                        break;
-                    case '-':
-                        res = A - B;
-                        break;
-                    default:
-                        res = 0;
-                }
-                TextView result = (TextView) findViewById(R.id.result);
-                result.setText(Integer.toString(res));
+    public void compute( String a, String b, char operator) {
 
-                a = "";
-                b = "";
-                operator = Character.MIN_VALUE;
+        class Computer implements Runnable {
+            String a;
+            String b;
+            char operator;
+
+            Computer(String _a, String _b, char _operator) {
+                a = _a;
+                b = _b;
+                operator = _operator;
+
             }
-            System.out.println("haha");
-            return((float)1); //useless but needed smh
-        }
-        @Override
-        protected void onProgressUpdate(Float... floats) {
-        }
-        protected void onPostExecute(Float... floats) {
+
+            public void run() {
+                TextView result =  (TextView)findViewById(R.id.result);
+                int res;
+                Double A = Double.parseDouble(a);
+                Double B = Double.parseDouble(b);
+
+                try
+                {
+                    //connect to server
+                    Socket sock = new Socket("10.0.2.2", 9876);
+                    DataInputStream dis = new DataInputStream(sock.getInputStream());
+                    DataOutputStream dos = new DataOutputStream(sock.getOutputStream());
+                    //send data to server
+                    dos.writeDouble(A);
+                    dos.writeChar(operator);
+                    dos.writeDouble(B);
+
+                    //retrieve data from server
+                    Double RES = dis.readDouble();
+                    result.setText(Double.toString(RES));
+
+                    //closing connection to avoid memory leak
+                    dis.close();
+                    dos.close();
+                    sock.close();
+                }catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+            }
 
         }
+        Thread t = new Thread(new Computer(a, b, operator));
+        t.start();
     }
-
 
 
     public void numbers(View v)
@@ -117,11 +130,14 @@ public class MainActivity extends AppCompatActivity {
             case '=':
                 if (!b.equals(""))
                 {
+                    //call server
+                    compute(this.a, this.b, this.operator);
+
+
 
                     System.out.println("Removing all...");
-                    EqualButton equal = new EqualButton();
-                    equal.execute();
-                    ((ViewGroup)findViewById(R.id.layout_equal)).removeView(v);
+
+                    ((ViewGroup)findViewById(R.id.layout_equal)).removeView(v); //tried to erase the button but it doesn't work
                     this.a = "";
                     this.b = "";
                     this.operator = Character.MIN_VALUE;
