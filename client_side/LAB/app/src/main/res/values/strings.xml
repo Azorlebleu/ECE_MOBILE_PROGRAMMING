@@ -17,5 +17,7 @@
     <string name="equal">=</string>
     <string name="RESULT"></string>
     <string name="OPERATION"></string>
+    <string name="title_activity_dispaly">Dispaly</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

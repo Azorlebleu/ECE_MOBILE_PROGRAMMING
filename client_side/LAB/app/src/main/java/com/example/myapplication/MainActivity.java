@@ -1,4 +1,5 @@
 package com.example.myapplication;
+import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Button;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     public String a = "";
     public String b = "";
+    public String lastOperation="pas de modif";
+    public String lastResult="pas de modif";
     public char operator = Character.MIN_VALUE; //to emulate an empty character
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,14 +69,21 @@ public class MainActivity extends AppCompatActivity {
                     Double RES = dis.readDouble();
                     result.setText(Double.toString(RES));
 
+                    System.out.println("voici a:"+a);
+                    lastOperation=a+operator+b;
+                    System.out.println("voici last ope:"+lastOperation);
+                    lastResult=Double.toString(RES);
                     //closing connection to avoid memory leak
                     dis.close();
                     dos.close();
                     sock.close();
+
+
                 }catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
+
 
             }
 
@@ -165,4 +175,13 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    public void SendResult(View view) {
+        Intent intent = new Intent(this, Display_Result.class);
+
+        intent.putExtra("last_operation",lastOperation);
+        intent.putExtra("last_result", lastResult);
+        startActivity(intent);
+    }
+
 }
