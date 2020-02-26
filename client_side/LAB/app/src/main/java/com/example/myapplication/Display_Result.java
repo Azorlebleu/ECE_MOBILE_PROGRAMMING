@@ -28,11 +28,11 @@ System.out.println(lastOperation);
         result.setText(lastResult);
     }
     public void URLresearch(View view) {
-        Intent intent = new Intent(this, URL.class);
+        //Intent intent = new Intent(this, URL.class);
         EditText editText = (EditText) findViewById(R.id.url);
         String message = editText.getText().toString();
-        Uri uri = Uri.parse(message);
-        //Intent inten = new Intent(Intent.ACTION_VIEW, uri);
+        Uri uri = Uri.parse("https://www.google.com/search?q="+message);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
 
     }

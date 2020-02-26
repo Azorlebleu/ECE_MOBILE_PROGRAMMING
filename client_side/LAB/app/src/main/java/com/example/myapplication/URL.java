@@ -16,6 +16,7 @@ public class URL extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
+        //intent.getExtras("uri");
     }
 
 }
