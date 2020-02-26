@@ -2,7 +2,10 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.net.Uri;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,5 +27,15 @@ System.out.println(lastOperation);
         operation.setText(lastOperation);
         result.setText(lastResult);
     }
+    public void URLresearch(View view) {
+        Intent intent = new Intent(this, URL.class);
+        EditText editText = (EditText) findViewById(R.id.url);
+        String message = editText.getText().toString();
+        Uri uri = Uri.parse(message);
+        //Intent inten = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+
+    }
+
 
 }
