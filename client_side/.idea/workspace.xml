@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf21b1c7-579b-49ac-af06-0c5f7e181589" name="Default Changelist" comment="" />
+    <list default="true" id="bf21b1c7-579b-49ac-af06-0c5f7e181589" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/ECE_MOBILE_PROGRAMMING.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LAB/.idea/LAB.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LAB/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LAB/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LAB/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LAB/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/ECE_MOBILE_PROGRAMMING.iml">
           <provider selected="true" editor-type-id="text-editor" />
@@ -28,7 +41,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="130" />
@@ -36,34 +49,65 @@
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="ECE_MOBILE_PROGRAMMING" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECE_MOBILE_PROGRAMMING" type="462c0819:PsiDirectoryNode" />
+              <item name="client_side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client_side" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ECE_MOBILE_PROGRAMMING" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECE_MOBILE_PROGRAMMING" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="client_side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client_side" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client_side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client_side" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client_side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client_side" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client_side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client_side" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="myapplication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client_side" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client_side" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="myapplication" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/LAB" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
